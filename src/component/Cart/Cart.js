@@ -6,19 +6,17 @@ const Cart = ({ cart }) => {
     const { pairImage, name, price} = cart;
 
     return (
-        <div>
-            <div className="cart-item">
-                <div>
-                    <img
-                        className='cart-item-image'
-                        src={pairImage}
-                        alt=""
-                    />
-                </div>
-                <div className='product-info'>
-                    <p>{name}</p>
-                    <p>Price: ${price}</p>
-                </div>
+        <div className="cart-item">
+            <div>
+                <img
+                    className='cart-item-image'
+                    src={pairImage}
+                    alt=""
+                />
+            </div>
+            <div className='product-info'>
+                <p>{name}</p>
+                <p>Price: ${price}</p>
             </div>
         </div>
     );

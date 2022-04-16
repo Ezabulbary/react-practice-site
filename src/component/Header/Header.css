@@ -5,10 +5,13 @@
     color: #ffffff;
 }
 
+.header-title {
+    font-size: 40px;
+    font-family: "Bonheur Royale", cursive;
+    color: white;
+}
+
 .header p{
     margin: 0;
 }
 
-.header-title{
-    font-size: 40px;
-}
