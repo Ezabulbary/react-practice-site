@@ -1,0 +1,22 @@
+
+.cart-item{
+    height: 100x;
+    width: 100%;
+    border: 1px solid rgb(150, 141, 141);
+    border-radius: 10px;
+    margin: 5px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-image{
+    height: 60px;
+    width: 60px;
+    margin-left: 5px;
+}
+
+.product-info p{
+    margin: 0;
+}
