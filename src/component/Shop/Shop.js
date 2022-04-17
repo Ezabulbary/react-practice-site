@@ -1,5 +1,3 @@
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import React, { useEffect, useState } from 'react';
 import Products from '../Products/Products';
 import Cart from '../Cart/Cart';
@@ -16,12 +14,23 @@ const Shop = () => {
     }, []);
 
     const handleAddToCart = (selectedProduct) => {
-        const newCarts = [...cart, selectedProduct];
+        let newCarts = [];
+        const exist = cart.find(product => product.id === selectedProduct.id);
+        if(!exist){
+            selectedProduct.quantity = 1;
+            newCarts = [...cart, selectedProduct];
+        }
+        else{
+            const rest = cart.filter(product => product.id !== selectedProduct.id);
+            selectedProduct.quantity = selectedProduct.quantity + 1;
+            newCarts = [...rest, selectedProduct];
+        }
+
         setCart(newCarts);
     }
 
-    const clickDeleteToCart = (selectedProduct) => {
-        console.log(selectedProduct)
+    const clickDeleteToCart = () => {
+        setCart([]);
     }
 
     return (
@@ -36,19 +45,10 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <div className="top-bar">
-                    <h3>Order Summary</h3>
-                    <FontAwesomeIcon className='delete' onClick={() => clickDeleteToCart} icon={faTrash} />
-                </div>
-                {
-                    cart.map(item => <Cart
-                    key={item.id}
-                    cart={item}
-                    ></Cart>)
-                }
-                <div className="bottom-bar">
-                    <button>All Clear</button>
-                </div>
+                <Cart
+                    cart={cart}
+                    clickDeleteToCart={clickDeleteToCart}
+                ></Cart>
             </div>
         </div>
     );

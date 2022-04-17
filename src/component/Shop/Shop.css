@@ -10,32 +10,6 @@
 }
 
 .cart-container{
-    position: sticky;
-    top: 0;
     border-left: 2px solid rgb(0, 0, 0);
 }
 
-.top-bar {
-    width: 100%;
-    height: 48px;
-    border-radius: 0 0 8px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: rgba(150, 141, 141, 0.212);
-}
-
-.delete:hover {
-    color: red;
-}
-
-.bottom-bar button {
-    width: 100%;
-    height: 48px;
-    border-radius: 10px;
-    margin-top: 5px;
-}
-
-.bottom-bar button:hover {
-    color: red;
-}
