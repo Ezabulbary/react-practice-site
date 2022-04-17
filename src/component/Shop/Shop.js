@@ -15,13 +15,13 @@ const Shop = () => {
 
     const handleAddToCart = (selectedProduct) => {
         let newCarts = [];
-        const exist = cart.find(product => product.id === selectedProduct.id);
+        const exist = cart.find(product => product.id == selectedProduct.id);
         if(!exist){
             selectedProduct.quantity = 1;
             newCarts = [...cart, selectedProduct];
         }
         else{
-            const rest = cart.filter(product => product.id !== selectedProduct.id);
+            const rest = cart.filter(product => product.id != selectedProduct.id);
             selectedProduct.quantity = selectedProduct.quantity + 1;
             newCarts = [...rest, selectedProduct];
         }

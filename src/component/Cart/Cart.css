@@ -19,8 +19,8 @@
 .cart-item {
     height: 80px;
     width: 100%;
-    border: 1px solid rgb(150, 141, 141);
-    border-radius: 10px;
+    /* border: 1px solid rgb(150, 141, 141);
+    border-radius: 10px; */
     margin: 5px 0;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -32,6 +32,7 @@
     height: 60px;
     width: 60px;
     margin-left: 5px;
+    border-radius: 50px;
 }
 
 .product-info p {
